@@ -24,4 +24,10 @@ public class EmbaralhadorParPorImparTest {
 		String palavra = "EGITO";
 		assertEquals("GETIO", this.embaralhador.embaralhar(palavra));
 	}
+	
+	@Test
+	public void deveEmbaralharPorIndicePalavraComQuantidadeDeCaracteresIgualAUm() {
+		String palavra = "J";
+		assertEquals("J", this.embaralhador.embaralhar(palavra));
+	}
 }
