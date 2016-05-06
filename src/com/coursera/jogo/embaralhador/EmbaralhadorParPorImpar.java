@@ -23,6 +23,6 @@ public class EmbaralhadorParPorImpar implements Embaralhador {
 
 	@Override
 	public String dificuldade() {
-		return "Fácil";
+		return "FÃ¡cil";
 	}
 }

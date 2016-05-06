@@ -1,16 +1,16 @@
 package com.coursera.jogo.embaralhador;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
 
-public class EmbaralhadorParPorImparTest {
+class EmbaralhadorParPorImparTest {
 	private Embaralhador embaralhador;
 
 	@Before
 	public void setUp() {
-		this.embaralhador = FabricaEmbaralhadores.newEmbaralhador(TipoEmbaralhador.PAR_POR_IMPAR);
+		this.embaralhador = TipoEmbaralhador.PAR_POR_IMPAR.getEmbaralhador();
 	}
 	
 	@Test

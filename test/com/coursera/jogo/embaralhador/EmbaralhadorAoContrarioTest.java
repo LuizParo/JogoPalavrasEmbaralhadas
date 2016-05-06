@@ -5,12 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class EmbaralhadorAoContrarioTest {
+class EmbaralhadorAoContrarioTest {
 	private Embaralhador embaralhador;
 
 	@Before
 	public void setUp() {
-		this.embaralhador = FabricaEmbaralhadores.newEmbaralhador(TipoEmbaralhador.INVERSO);
+		this.embaralhador = TipoEmbaralhador.INVERSO.getEmbaralhador();
 	}
 
 	@Test
