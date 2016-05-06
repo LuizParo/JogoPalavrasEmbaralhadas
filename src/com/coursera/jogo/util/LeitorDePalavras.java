@@ -20,7 +20,7 @@ public class LeitorDePalavras {
 	public void carregarNomes() throws IOException {
 		try(FileInputStream inputStream = new FileInputStream(new File(this.fileName));
 		    Scanner scanner = new Scanner(inputStream, Charset.forName("UTF-8").toString())) {
-			
+			this.palavrasEncontradas.clear();
 			while(scanner.hasNext()) {
 				this.palavrasEncontradas.add(scanner.next());
 			}
@@ -28,7 +28,7 @@ public class LeitorDePalavras {
 	}
 
 	public List<String> getPalavrasEncontradas() {
-		return Collections.unmodifiableList(palavrasEncontradas);
+		return Collections.unmodifiableList(this.palavrasEncontradas);
 	}
 
 	public boolean isPalavrasCarregadas() {
