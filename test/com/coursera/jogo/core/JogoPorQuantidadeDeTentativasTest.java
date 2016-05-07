@@ -19,7 +19,7 @@ public class JogoPorQuantidadeDeTentativasTest {
 		Embaralhador embaralhador = Mockito.mock(Embaralhador.class);
 		Mockito.when(embaralhador.embaralhar("brasil")).thenReturn("rbsali");
 		
-		this.jogo = new JogoPorQuantidadeDeTentativas(bancoDePalavras, embaralhador, 5);
+		this.jogo = FabricaMecanicaDoJogo.newJogo(TipoJogo.QUANTIDADE_TENTATIVAS, bancoDePalavras, embaralhador, 5);
 	}
 
 	@Test

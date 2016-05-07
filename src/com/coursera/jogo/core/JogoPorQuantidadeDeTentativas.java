@@ -10,9 +10,18 @@ class JogoPorQuantidadeDeTentativas implements MecanicaDoJogo {
 	private Embaralhador embaralhador;
 	private int limiteDePontos;
 	
-	public JogoPorQuantidadeDeTentativas(BancoDePalavras bancoDePalavras, Embaralhador embaralhador, int limiteDePontos) {
+	@Override
+	public void setBancoDePalavras(BancoDePalavras bancoDePalavras) {
 		this.bancoDePalavras = bancoDePalavras;
+	}
+	
+	@Override
+	public void setEmbaralhador(Embaralhador embaralhador) {
 		this.embaralhador = embaralhador;
+	}
+	
+	@Override
+	public void setLimiteDePontos(int limiteDePontos) {
 		this.limiteDePontos = limiteDePontos;
 	}
 
