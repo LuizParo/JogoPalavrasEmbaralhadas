@@ -23,4 +23,14 @@ public class LeitorDePalavrasTest {
 		assertTrue(this.leitor.isPalavrasCarregadas());
 		assertEquals(20, this.leitor.getPalavrasEncontradas().size());
 	}
+	
+	@Test
+	public void deveCarregarPalavrasDeArquivoSomenteUmaVez() throws IOException {
+		this.leitor.carregarNomes();
+		this.leitor.carregarNomes();
+		this.leitor.carregarNomes();
+		this.leitor.carregarNomes();
+		assertTrue(this.leitor.isPalavrasCarregadas());
+		assertEquals(20, this.leitor.getPalavrasEncontradas().size());
+	}
 }

@@ -52,13 +52,13 @@ class JogoPorQuantidadeDeTentativas implements MecanicaDoJogo {
 	}
 
 	@Override
-	public String resultado() {
+	public EstadoDaPartida resultado() {
 		if(this.isJogoEncerrado()) {
 			if(this.quantidadeDeAcertos == this.limiteDePontos) {
-				return "Venceu!";
+				return EstadoDaPartida.VENCEDOR;
 			}
-			return "Perdeu!";
+			return EstadoDaPartida.PERDEDOR;
 		}
-		return "Jogo não finalizado!";
+		return EstadoDaPartida.JOGO_NAO_FINALIZADO;
 	}
 }

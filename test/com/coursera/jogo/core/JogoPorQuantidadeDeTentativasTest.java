@@ -28,7 +28,7 @@ public class JogoPorQuantidadeDeTentativasTest {
 			this.jogo.recuperaPalavraEmbaralhada();
 			this.jogo.computaTentativa("brasil");
 		}
-		assertEquals("Venceu!", this.jogo.resultado());
+		assertEquals(EstadoDaPartida.VENCEDOR, this.jogo.resultado());
 	}
 	
 	@Test
@@ -37,6 +37,6 @@ public class JogoPorQuantidadeDeTentativasTest {
 			this.jogo.recuperaPalavraEmbaralhada();
 			this.jogo.computaTentativa("abc");
 		}
-		assertEquals("Perdeu!", this.jogo.resultado());
+		assertEquals(EstadoDaPartida.PERDEDOR, this.jogo.resultado());
 	}
 }

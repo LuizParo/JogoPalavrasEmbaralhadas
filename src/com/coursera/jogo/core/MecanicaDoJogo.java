@@ -7,7 +7,7 @@ public interface MecanicaDoJogo {
 	public String recuperaPalavraEmbaralhada();
 	public void computaTentativa(String palavra);
 	public int pontuacaoFinalDoJogador();
-	public String resultado();
+	public EstadoDaPartida resultado();
 	public void setBancoDePalavras(BancoDePalavras bancoDePalavras);
 	public void setEmbaralhador(Embaralhador embaralhador);
 	public void setLimiteDePontos(int limiteDePontos);
