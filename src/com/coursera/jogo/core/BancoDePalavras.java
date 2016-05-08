@@ -14,9 +14,15 @@ public class BancoDePalavras {
 	}
 	
 	public String recuperaPalavraAleatoria() {
-		int indice = ThreadLocalRandom.current().nextInt(0, this.quantidadeDePalavrasEncontradas());
+		int indice = 0;
+		if(this.quantidadeDePalavrasEncontradas() > 0) {
+			indice = ThreadLocalRandom.current().nextInt(0, this.quantidadeDePalavrasEncontradas());
+		}
+		
 		if(this.leitor.isPalavrasCarregadas()) {
-			return this.leitor.getPalavrasEncontradas().get(indice);
+			String palavra = this.leitor.getPalavrasEncontradas().get(indice);
+			this.leitor.getPalavrasEncontradas().remove(palavra);
+			return palavra;
 		}
 		return "";
 	}

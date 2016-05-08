@@ -23,8 +23,18 @@ public class BancoDePalavrasTest {
 	}
 	
 	@Test
-	public void deveCarregarArquivoRandomicamente() {
-		assertNotEquals("", this.bancoDePalavras.recuperaPalavraAleatoria());
-		assertNotEquals("", this.bancoDePalavras.recuperaPalavraAleatoria());
+	public void deveCarregarPalavrasRandomicamente() {
+		assertNotEquals(this.bancoDePalavras.recuperaPalavraAleatoria(), this.bancoDePalavras.recuperaPalavraAleatoria());
+	}
+	
+	@Test
+	public void deveExcluirPalavraJaLida() {
+		int contador = 0;
+		while(this.bancoDePalavras.quantidadeDePalavrasEncontradas() > 0) {
+			this.bancoDePalavras.recuperaPalavraAleatoria();
+			contador++;
+		}
+		assertEquals(20, contador);
+		assertEquals(0, this.bancoDePalavras.quantidadeDePalavrasEncontradas());
 	}
 }

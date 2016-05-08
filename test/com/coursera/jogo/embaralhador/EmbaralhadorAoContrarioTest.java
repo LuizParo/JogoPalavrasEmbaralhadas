@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-class EmbaralhadorAoContrarioTest {
+public class EmbaralhadorAoContrarioTest {
 	private Embaralhador embaralhador;
 
 	@Before

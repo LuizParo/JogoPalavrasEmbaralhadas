@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -28,7 +27,7 @@ public class LeitorDePalavras {
 	}
 
 	public List<String> getPalavrasEncontradas() {
-		return Collections.unmodifiableList(this.palavrasEncontradas);
+		return this.palavrasEncontradas;
 	}
 
 	public boolean isPalavrasCarregadas() {

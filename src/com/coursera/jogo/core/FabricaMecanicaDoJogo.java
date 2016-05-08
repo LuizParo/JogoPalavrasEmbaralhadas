@@ -4,9 +4,13 @@ public final class FabricaMecanicaDoJogo {
 	private FabricaMecanicaDoJogo() {}
 	
 	public static MecanicaDoJogo newJogo(TipoJogo tipoJogo, BancoDePalavras bancoDePalavras, int limiteDePontos) {
-		MecanicaDoJogo jogo = tipoJogo.getJogo();
+		MecanicaDoJogo jogo = null;
+		if(tipoJogo == TipoJogo.QUANTIDADE_TENTATIVAS) {
+			jogo = new JogoPorQuantidadeDeAcertosOuErros(limiteDePontos);
+		} else {
+			jogo = new JogoPorTodasAsPalavras();
+		}
 		jogo.setBancoDePalavras(bancoDePalavras);
-		jogo.setLimiteDePontos(limiteDePontos);
 		
 		return jogo;
 	}

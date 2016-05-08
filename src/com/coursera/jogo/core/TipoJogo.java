@@ -1,27 +1,16 @@
 package com.coursera.jogo.core;
 
 public enum TipoJogo {
-	QUANTIDADE_TENTATIVAS(JogoPorQuantidadeDeTentativas.class);
+	QUANTIDADE_TENTATIVAS("Por limite de acertos ou erro com 5 palavras."),
+	TODAS_PALAVRAS("Por quantidade de acerto utilizando todas as palavras.");
 	
-	private Class<? extends MecanicaDoJogo> jogo;
+	private String descricaoDoJogo;
 
-	/**
-	 * Como as classes que extendem {@code} MecanicaDoJogo} possuem estado (atributos),
-	 * não é interessante que elas possuam uma única intância por enum, então ao invés
-	 * do objeto do jogo ser armazenado no atributo {@link TipoJogo jogo} do enum,
-	 * somente uma referência ao seu objeto {@code Class} será armazenado, para que a cada
-	 * chamada de um jogo, uma nova instância deste seja criada.
-	 * @param jogo
-	 */
-	private TipoJogo(Class<? extends MecanicaDoJogo> jogo) {
-		this.jogo = jogo;
+	private TipoJogo(String descricaoDoJogo) {
+		this.descricaoDoJogo = descricaoDoJogo;
 	}
 	
-	MecanicaDoJogo getJogo() {
-		try {
-			return this.jogo.newInstance();
-		} catch (InstantiationException | IllegalAccessException e) {
-			throw new RuntimeException(e.getMessage(), e);
-		}
+	public String getDescricaoDoJogo() {
+		return descricaoDoJogo;
 	}
 }
