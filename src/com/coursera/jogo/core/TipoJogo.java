@@ -1,8 +1,8 @@
 package com.coursera.jogo.core;
 
 public enum TipoJogo {
-	QUANTIDADE_TENTATIVAS("Por limite de acertos ou erro com 5 palavras."),
-	TODAS_PALAVRAS("Por quantidade de acerto utilizando todas as palavras.");
+	QUANTIDADE_TENTATIVAS("Por quantidade de acertos ou erros."),
+	TODAS_PALAVRAS("Por quantidade de acertos utilizando todas as palavras.");
 	
 	private String descricaoDoJogo;
 
